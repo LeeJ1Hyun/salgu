@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+body {
+	font-size: 13px;
+	font-family: '-apple-system', 'Noto Sans KR', sans-serif;
+	height: 100%
+}
+
+.login-join-membership__wrap {
+	width: 400px;
+	margin: 0 auto;
+}
+
+.headerCommonLayout {
+	background-image: url("img/banner.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 80%;
+	height: 110px;
+}
+
+section {
+	width: 80%;
+	padding: 15px;
+	padding-left: 0px;
+	margin: 0 auto;
+	line-height: 2;
+}
+
+.login-join-membership__con {
+	
+}
+
+.login-join-membership__form {
+	
+}
+
+.login-input {
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+.login-input__label {
+	clear: both;
+	font-weight: bold;
+}
+
+.login-input__wrap {
+	display: flex;
+	justify-content: space-between;
+}
+
+strong.notice {
+	color: #FA1A05;
+	letter-spacing: 1px;
+	font-size: 4px;
+	margin-left: 5px;
+}
+
+.login-input__input {
+	width: 78%;
+	height: 28px;
+	border: 1px solid #E3E3E3;
+}
+
+.loginJoinMembershipBtn {
+	background-color: #FD8A69;
+	color: white;
+	font-size: 4px;
+	border: hidden;
+	border-radius: 5px;
+}
+
+.login-button {
+	background-color: #FD8A69;
+	color: white;
+	border: hidden;
+	border-radius: 5px;
+}
+
+.joinCancleBtn {
+	height: 28px;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#join, #cancle {
+	background-color: #FD8A69;
+	color: white;
+	border: hidden;
+	border-radius: 5px;
+}
+
+#cancle {
+	background-color: gray;
+}
+ul.login-member__util{
+	float:left;
+}
+ul.login-member__util__list li {
+	list-style-type: none;
+}
+
+ul.login-member__util__list li:last-child::before{
+	content: "|";
+}
+
+a{
+	text-decoration: none;
+}
