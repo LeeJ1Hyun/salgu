@@ -1,4 +1,4 @@
-package com.salgumarket.sales.model;
+package com.salguMarket.sales.model;
 
 import java.sql.Timestamp;
 

@@ -1,4 +1,4 @@
-package com.salgumarket.deal.model;
+package com.salguMarket.deal.model;
 
 import java.sql.SQLException;
 import java.util.List;

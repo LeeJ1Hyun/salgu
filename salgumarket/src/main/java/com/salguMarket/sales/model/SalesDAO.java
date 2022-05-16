@@ -1,4 +1,4 @@
-package com.salgumarket.sales.model;
+package com.salguMarket.sales.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.salgumarket.db.ConnectionPoolMgr2;
+import com.salguMarket.db.ConnectionPoolMgr2;
 
 public class SalesDAO {
 	private ConnectionPoolMgr2 pool;
