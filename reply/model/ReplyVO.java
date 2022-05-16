@@ -6,18 +6,20 @@ public class ReplyVO {
 
 	private int rNo;
 	private int mNo;
-	private int bNo;
+	private int pNo;
 	private String rContent;
 	private Timestamp regdate;
+	
 	public ReplyVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public ReplyVO(int rNo, int mNo, int bNo, String rContent, Timestamp regdate) {
+	
+	public ReplyVO(int rNo, int mNo, int pNo, String rContent, Timestamp regdate) {
 		super();
 		this.rNo = rNo;
 		this.mNo = mNo;
-		this.bNo = bNo;
+		this.pNo = pNo;
 		this.rContent = rContent;
 		this.regdate = regdate;
 	}
@@ -33,11 +35,11 @@ public class ReplyVO {
 	public void setmNo(int mNo) {
 		this.mNo = mNo;
 	}
-	public int getbNo() {
-		return bNo;
+	public int getpNo() {
+		return pNo;
 	}
-	public void setbNo(int bNo) {
-		this.bNo = bNo;
+	public void setpNo(int pNo) {
+		this.pNo = pNo;
 	}
 	public String getrContent() {
 		return rContent;
@@ -53,7 +55,7 @@ public class ReplyVO {
 	}
 	@Override
 	public String toString() {
-		return "ReplyVO [rNo=" + rNo + ", mNo=" + mNo + ", bNo=" + bNo + ", rContent=" + rContent + ", regdate="
+		return "ReplyVO [rNo=" + rNo + ", mNo=" + mNo + ", pNo=" + pNo + ", rContent=" + rContent + ", regdate="
 				+ regdate + "]";
 	}
 

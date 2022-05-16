@@ -34,7 +34,7 @@ public class ReplyService {
 		return replyDao.selectAllBymNo(no);
 	}
 
-	public List<ReplyVO> selectAllBybNo(int no) throws SQLException {
-		return replyDao.selectAllBybNo(no);
+	public List<ReplyVO> selectAllBypNo(int no) throws SQLException { 
+		return replyDao.selectAllBypNo(no);
 	}
 }

@@ -1,6 +1,5 @@
 package com.salgumarket.reply.model;
 
-import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,7 +8,6 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.salgumarket.board.model.BoardVO;
 import com.salgumarket.db.ConnectionPoolMgr2;
 
 public class ReplyDAO {
@@ -26,15 +24,15 @@ public class ReplyDAO {
 
 		try {
 			con=pool.getConnection();
-			String sql="insert into reply(rno, mno, bno, rcontent) values(reply_seq.nextval, ?, ?, ?)";
+			String sql="insert into reply(rno, mno, pNo, rcontent) values(reply_seq.nextval, ?, ?, ?)";
 			/*
-			insert into reply(rno, mno, bno, rcontent) values(reply_seq.nextval, 1, 1, 'test입니다');
+			insert into reply(rno, mno, pno, rcontent) values(reply_seq.nextval, 1, 1, 'test입니다');
 			*/
 			ps=con.prepareStatement(sql);
 
 			ps.setInt(1, vo.getrNo());
 			ps.setInt(2, vo.getmNo());
-			ps.setInt(3, vo.getbNo());
+			ps.setInt(3, vo.getpNo());
 			ps.setString(4, vo.getrContent());
 		
 			int cnt=ps.executeUpdate();
@@ -101,7 +99,7 @@ public class ReplyDAO {
 		} 
 	}
 
-	public List<ReplyVO> selectAllBymNo(int no) throws SQLException {
+	public List<ReplyVO> selectAllBymNo(int no) throws SQLException { //회원이 작성한 전체 댓글 조회
 
 
 		Connection con = null;
@@ -125,12 +123,12 @@ public class ReplyDAO {
 
 				int rNo=rs.getInt("rNo");
 				int mNo=rs.getInt("mNo");
-				int bNo=rs.getInt("bNo");
+				int pNo=rs.getInt("pNo");
 				String rContent=rs.getString("rContent");
 				Timestamp regdate=rs.getTimestamp("regdate");
 
 
-				ReplyVO vo=new ReplyVO(rNo, mNo, bNo, rContent, regdate);
+				ReplyVO vo=new ReplyVO(rNo, mNo, pNo, rContent, regdate);
 				list.add(vo);
 			}
 
@@ -143,7 +141,7 @@ public class ReplyDAO {
 		}
 	}
 
-	public List<ReplyVO> selectAllBybNo(int no) throws SQLException { //게시글 댓글 조회
+	public List<ReplyVO> selectAllBypNo(int no) throws SQLException { //게시글 댓글 조회
 
 
 		Connection con = null;
@@ -156,7 +154,7 @@ public class ReplyDAO {
 			con = pool.getConnection();
 
 			// 3
-			String sql = "select * from reply where bNo=?";
+			String sql = "select * from reply where pNo=?";
 		
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, no);
@@ -167,12 +165,12 @@ public class ReplyDAO {
 
 				int rNo=rs.getInt("rNo");
 				int mNo=rs.getInt("mNo");
-				int bNo=rs.getInt("bNo");
+				int pNo=rs.getInt("pNo");
 				String rContent=rs.getString("rContent");
 				Timestamp regdate=rs.getTimestamp("regdate");
 
 
-				ReplyVO vo=new ReplyVO(rNo, mNo, bNo, rContent, regdate);
+				ReplyVO vo=new ReplyVO(rNo, mNo, pNo, rContent, regdate);
 				list.add(vo);
 			}
 
